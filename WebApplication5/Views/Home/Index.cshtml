@@ -1,0 +1,84 @@
+﻿@model IEnumerable<WebApplication5.Models.Bicycle>
+@{
+
+}
+
+
+
+@*@if (ViewBag.IsComplited)
+    {
+
+        <h2 style="margin:auto; text-align:center;" class="bg-light font-italic d-block">thanks for order)</h2>
+    }*@
+
+<div class="d-flex" style="flex-direction:row;">
+
+
+    <div class="bg-dark" id="sort-cont" style="width:10vw; height:fit-content; padding-bottom:10px; margin-top:10vh" >
+
+        <div>
+            <div>
+                <h3 class="btn btn-primary" style="width:10vw">Manufacture</h3>
+
+                <ul style="margin-right:1vw">
+                    @foreach (var item in ViewBag.ManufactureContext)
+                    {
+                        <li  class="d-flex m-auto" style="flex-direction:row; justify-content:space-between; color:white;">
+                            <label>@item</label>
+                            <input type="radio" name="manufactureName" value="@item" />
+                        </li>
+                    }
+
+                </ul>
+                <h3 class="btn btn-primary" style="width:10vw">Frame size</h3>
+
+                <ul>
+                    @foreach (var item in ViewBag.FrameSizeContext)
+                    {
+                        <li class="d-flex m-auto" style="flex-direction:row; justify-content:space-around;color:white;">
+                            <label>@item</label>
+                            <input type="radio" name="frameSize" value="@item" />
+                        </li>
+                    }
+
+                </ul>
+
+                <h3 class="btn btn-primary" style="width:10vw">Frame size</h3>
+
+                <ul>
+                    @foreach (var item in ViewBag.GearsQuantityContext)
+                    {
+                        <li class="d-flex m-auto" style="flex-direction:row; justify-content:space-around;color:white;">
+                            <label>@item</label>
+                            <input type="radio" name="gearsQuantity" value="@item" />
+                        </li>
+                    }
+
+                </ul>
+                
+            </div>
+            <input type="button" id="filtr-button" class="btn btn-warning" style="margin-left:3vw" value="select" />
+        </div>
+    </div>
+
+    <div>
+
+        <div style="display:flex; flex-direction:row; justify-content:space-between">
+            <div style="margin:auto; margin-top:20px;" >
+                <div class="form-group has-search" style="display:flex; flex-direction:row;">
+                    <input type="text" class="form-control" id="serch-text" style="display:inline-block" placeholder="Search">
+                    <input class="btn btn-primary" id="serch-btn" type="submit" value="serch" style="display:inline-block" />
+                </div>
+            </div>
+
+        </div>
+
+
+
+        <div id="my-flex-contenier" style="width:90vw">
+         
+        </div>
+    </div>
+
+</div>
+

@@ -1,0 +1,26 @@
+﻿@model WebApplication5.Models.User
+
+<link href="~/css/cssForLogin.css" rel="stylesheet" />
+
+<form class="card" style="width: 25rem; margin:auto; margin-top:20px; margin-bottom:20px;" method="post" asp-route="CreateOrUpdate">
+    @Html.HiddenFor(x => x.Id)
+    <ul class="list-group list-group-flush">
+        <li class="list-group-item">
+            <div class="form-group">
+                @Html.TextBoxFor(x => x.UserName, new { @class = "form-control m-auto bg-light border-o p-2 ", placeholder = "name", style = "width:85%; text-align: center;" })
+            </div>
+        </li>
+
+        <li class="list-group-item">
+            <div class="form-group">
+                @Html.TextBoxFor(x => x.Email, new { @class = "form-control m-auto bg-light border-o p-2 ", placeholder = "Email", style = "width:85%; text-align: center;" })
+            </div>
+        </li>
+        <li class="list-group-item">
+            <div class="form-group">
+                <input type="password" placeholder="password" name="password" class="form-control m-auto bg-light border-o p-2 " style="width:85%; text-align: center;" />
+            </div>
+        </li>
+    </ul>
+    <input type="submit" class="btn btn-primary" value="Save" />
+</form>

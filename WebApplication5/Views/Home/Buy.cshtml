@@ -1,0 +1,31 @@
+﻿@model WebApplication5.Models.Bicycle
+
+
+    <div style="display:flex; width:80rem; flex-direction:row; margin:auto; margin-top:50px; margin-bottom:50px;" class="card">
+    <div>
+        <img class="card-img-top" src="@Model.IamgeUrl" style="width:30rem; margin-top:6rem;">
+    </div>
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-title">@Model.Name</h5>
+            <p class="card-text">@Model.Discripton</p>
+        </div>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">Price: @Model.Price $</li>
+            <li class="list-group-item">Wheel diameter: @Model.WheelDiameter"</li>
+            <li class="list-group-item">Weight @Model.Weight</li>
+            <li class="list-group-item">Frame size: @Model.FrameSize</li>
+            <li class="list-group-item">Gears quantity: @Model.GearsQuantity "</li>
+            <li class="list-group-item">Mnufacture: @Model.Mnufacture</li>
+        </ul>
+        <div class="card-body">
+            <a href="~/Home/Index" class="card-link btn btn-info">Back to shoping</a>
+
+            <form method="post"  style="margin-left:10px; display:inline">
+                @Html.Hidden("id", Model.BicycleID)
+                <input type="submit" class="btn btn-primary" value="Buy" />
+            </form>
+
+        </div>
+    </div>
+</div>

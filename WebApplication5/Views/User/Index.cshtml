@@ -1,0 +1,40 @@
+﻿@model IEnumerable<WebApplication5.Models.User>
+
+    <div class="bg-dark d-flex justify-content-between" style="padding:20px;">
+        <a href="~/Admin/index" style="margin:2px;" class="btn btn-primary">Goods</a>
+        <a class="btn btn-primary d-block" asp-action="CreateOrUpdate">New user</a>
+        <a href="~/Roles/Index" style="margin:2px;" class="btn btn-primary">Roles</a>
+    </div>
+    <table class="table table-dark table-hover" style="margin:0px;">
+        <thead>
+            <tr>
+                <th scope="col">Name</th>
+                <th scope="col">Normalize Name</th>
+                <th scope="col">Email</th>
+                <th scope="col">Normalize Email</th>
+                <th scope="col"></th>
+                <th scope="col"></th>
+                <th scope="col"></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var user in Model)
+            {
+            <tr>
+                <th>@user.UserName</th>
+                <td>@user.NormalizedUserName</td>
+                <td>@user.Email</td>
+                <td>@user.NormalizedEmail</td>
+                <td><a asp-action="CreateOrUpdate" asp-route-id="@user.Id" class="btn btn-outline-warning">Edit</a></td>
+                <td>
+                    <form asp-action="Delete" method="post" asp-route-id="@user.Id">
+                        <input type="submit" value="Delete" class="btn btn-outline-danger" />
+                    </form>
+                </td>
+                <td> <a asp-action="Edit" asp-controller="Roles" asp-route-id="@user.Id" class="btn btn-outline-warning">Change role</a></td>
+            </tr>
+            }
+
+        </tbody>
+
+    </table>

@@ -1,0 +1,51 @@
+﻿@model WebApplication5.Models.ViewModels.CartIndexViewModel
+@*
+*@
+@{
+}
+
+<div style="height:auto">
+
+<table class="table table-hover table-dark" style="margin:0px;">
+    <thead>
+        <tr>
+            <th scope="col">Quantity</th>
+            <th scope="col">Name</th>
+            <th scope="col">Manufacture</th>
+            <th scope="col">Price</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Cart.Lines)
+	{
+        <tr>
+            <td>@item.Quantity</td>
+            <td>@item.Bicycle.Name</td>
+            <td>@item.Bicycle.Mnufacture</td>
+            <td>@(item.Bicycle.Price * @item.Quantity) $</td>
+            <td>
+                <form action="~/Cart/Remove" method="post">
+                    @Html.Hidden("id", @item.Bicycle.BicycleID)
+                    @Html.Hidden("returnUrl", Model.ReturnUrl)
+                    <input type="submit" value="remove" class="btn btn-danger" />
+                </form>
+            </td>
+        </tr>
+		 
+	}
+    <tr>
+        <td></td>
+        <td>
+
+            <span style="color:white; margin-left:270px;">Total price: @Model.Cart.GetTotal() $</span>
+        </td>
+        <td>
+            <a href="~/Home/Index" class="btn btn-primary" style="margin-right:77px;">back to shoping</a>
+            <a href="~/Home/Index" class="btn btn-primary" style="margin-right:77px;">Cheack out</a>
+        </td>
+        <td></td>
+        <td></td>
+    </tr>
+    </tbody>
+</table>
+</div>

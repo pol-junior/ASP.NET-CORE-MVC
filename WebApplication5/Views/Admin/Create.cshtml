@@ -1,0 +1,102 @@
+﻿@model WebApplication5.Models.Bicycle
+@*
+*@
+@{
+
+
+}
+
+<form method="post" >
+    <div class="card" style="width: 25rem; margin:auto; margin-top:20px; margin-bottom:20px;">
+        @if (Model?.BicycleID != null)
+        {
+
+        @Html.HiddenFor(x => x.BicycleID)
+        }
+        @Html.HiddenFor(x => x.Discripton)
+        <div class="btn-danger p-0">
+            @Html.ValidationMessage("BicycleID")
+        </div>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+                <div class="form-group">
+                    @Html.LabelFor(x => x.Name)
+                    @Html.TextBoxFor(x => x.Name, new { @class = "form-control", required = "required" })
+                    <div class="btn-danger p-0">
+                        @Html.ValidationMessage("Name")
+                    </div>
+
+                </div>
+            </li>
+            <li class="list-group-item">
+                <div class="form-group">
+                    @Html.LabelFor(x => x.Price)
+                    @Html.TextBoxFor(x => x.Price, new { @class = "form-control" , required = "required" })
+                    <div class="btn-danger p-0">
+                        @Html.ValidationMessage("Weight")
+                    </div>
+
+                </div>
+            </li>
+            <li class="list-group-item">
+                <div class="form-group">
+                    @Html.LabelFor(x => x.WheelDiameter)
+                    @Html.TextBoxFor(x => x.WheelDiameter, new { @class = "form-control", required = "required" })
+                    <div class="btn-danger p-0">
+                        @Html.ValidationMessage("WheelDiameter")
+                    </div>
+
+                </div>
+            </li>
+            <li class="list-group-item">
+                <div class="form-group">
+                    @Html.LabelFor(x => x.Weight)
+                    @Html.TextBoxFor(x => x.Weight, new { @class = "form-control", required = "required" })
+                    <div class="btn-danger p-0">
+                        @Html.ValidationMessage("Weight")
+                    </div>
+                </div>
+            </li>
+            <li class="list-group-item">
+                <div class="form-group">
+                    @Html.LabelFor(x => x.FrameSize)
+                    @Html.TextBoxFor(x => x.FrameSize, new { @class = "form-control", required = "required" })
+                    <div class="btn-danger p-0">
+                        @Html.ValidationMessage("FrameSize")
+                    </div>
+                </div>
+            </li>
+            <li class="list-group-item">
+                <div class="form-group">
+                    @Html.LabelFor(x => x.GearsQuantity)
+                    @Html.TextBoxFor(x => x.GearsQuantity, new { @class = "form-control", required = "required" })
+                    <div class="btn-danger p-0">
+                        @Html.ValidationMessage("GearsQuantity")
+                    </div>
+
+                </div>
+            </li>
+            <li class="list-group-item">
+                <div class="form-group">
+                    @Html.LabelFor(x => x.Mnufacture)
+                    @Html.TextBoxFor(x => x.Mnufacture, new { @class = "form-control", required = "required" })
+                    <div class="btn-danger p-0">
+                        @Html.ValidationMessage("Mnufacture")
+                    </div>
+                </div>
+            </li>
+            <li class="list-group-item">
+                <div class="form-group">
+                    @Html.LabelFor(x => x.IamgeUrl)
+                    @Html.TextBoxFor(x => x.IamgeUrl, new { @class = "form-control", required = "required" })
+                    <div class="btn-danger p-0">
+                        @Html.ValidationMessage("IamgeUrl")
+                    </div>
+                </div>
+            </li>
+            <li class="list-group-item">
+                <input type="submit" class="btn btn-primary m-auto" value="Save" />
+            </li>
+        </ul>
+    </div>
+</form>

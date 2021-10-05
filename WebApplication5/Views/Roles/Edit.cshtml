@@ -1,0 +1,32 @@
+﻿@using Microsoft.AspNetCore.Identity
+@model WebApplication5.Models.ViewModels.ChangeRoleViewModel
+
+
+<form asp-action="Edit" method="post" asp-antiforgery="true" class="m-auto bg-dark w-25 h-25 border-dark">
+    <input type="hidden" value="@Model.UserId" name="userId" />
+    <table class="table table-dark" >
+        <tbody>
+
+            @foreach (IdentityRole role in Model.AllRoles)
+            {
+                <tr>
+
+                    <th>
+                        @role.Name
+                    </th>
+                    <td>
+                        <input type="checkbox" name="roles" value="@role.Name"
+                               @(Model.UserRoles.Contains(role.Name) ? "checked=\"checked\"" : "") />
+                    </td>
+                </tr>
+
+            }
+
+        </tbody>
+    </table>
+    <div class="d-flex justify-content-between">
+    <a asp-action="Index" asp-controller="User" class="btn btn-primary m-2" style="color:white;" >Back</a>
+    <input type="submit" class="btn btn-warning m-2" style="color:white;" value="Save" />
+    </div>
+
+</form>

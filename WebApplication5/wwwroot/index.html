@@ -1,0 +1,86 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Bicycle</title>
+    <link href="lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body>
+
+
+    <div class=" container card" style="width:500px">
+        <input type="text" class="form-control" placeholder="login" id="login" style="margin:40px; width:400px;">
+        <input type="password"  class="form-control" placeholder="password" id="password" style="margin: 40px; width: 400px;" />
+        <button id="loginBtn" class="btn btn-primary" style="margin:40px">Login</button>
+
+    </div>
+
+    <div class="container">
+        <div id="errors" class="alert alert-danger" style="display:none;"></div>
+
+        <form name="bicycleForm">
+            <input type="hidden" name="carId" value="0" />
+            <div class="form-group">
+                <label for="Name">Name: </label>
+                <input type="text" name="name" id="title" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label for="manufacture">Manufacture: </label>
+                <input type="text" name="manufacture" id="model" class="form-control" />
+            </div>
+            <div class="form-group" >
+                <label for="price">Price: </label>
+                <input type="number" name="price" id="price" class="form-control" />
+            </div>
+            
+            <div class="form-group">
+                <label for="frameSize">Frame size: </label>
+                <input type="number" name="frameSize" id="price" class="form-control" />
+            </div>
+
+            <div class="form-group">
+                <label for="wheelDiameter">Wheel diameter: </label>
+                <input type="number" name="wheelDiameter" id="price" class="form-control" />
+            </div>
+
+            <div class="form-group">
+                <label for="gearsQuantity">Gears quantity : </label>
+                <input type="number" name="gearsQuantity" id="price" class="form-control" />
+            </div>
+
+            <div class="form-group">
+                <label for="imageUrl">ImageUrl : </label>
+                <input type="url" name="imageUrl" id="price" class="form-control" />
+            </div>
+
+
+            <div class="form-group">
+                <label for="weight">Weight : </label>
+                <input type="number" name="weight" id="price" class="form-control" />
+            </div>
+
+
+            <button type="submit" id="submit" class="btn btn-primary">Save</button>
+        </form>
+
+        <table class="table table-dark">
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Manufacture</th>
+                    <th>Price</th>
+                    <th>Frame size</th>
+                    <th>Wheel diameter</th>
+                    <th>Weight</th>
+                    <th>Image</th>
+                    <th></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+
+    <script type="text/javascript" src="js/index.js"></script>
+</body>
+</html>

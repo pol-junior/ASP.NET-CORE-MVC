@@ -1,0 +1,148 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - WebApplication5</title>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+</head>
+<body style="background: #4895c4; padding:0px; margin:0px;">
+    <header >
+        <nav class="navbar navbar-light bg-light">
+            <a class="btn btn-primary" href="~/Home/Index">
+                <img src="https://backyarddesignusa.com/wp-content/uploads/2019/04/bike.png" width="30" height="30" class="d-inline-block align-top">
+                Home
+            </a>
+            @if (!User.Identity.IsAuthenticated)
+            {
+                <a class="btn btn-primary" href="~/Account/Login">
+                    <img src="https://www.iconpacks.net/icons/1/free-user-login-icon-305-thumb.png" width="30" height="30" class="d-inline-block align-top">
+                    Login
+                </a>
+
+            }
+
+            @if (!User.Identity.IsAuthenticated)
+            {
+                <a class="btn btn-primary" href="~/Account/Register">
+                    <img src="https://www.nicepng.com/png/full/280-2801903_click-the-register-now-button-on-the-account.png" width="30" height="30" class="d-inline-block align-top">
+                    Register
+                </a>
+            }
+            @if (User.Identity.IsAuthenticated)
+            {
+                <a class="btn btn-primary" href="~/Order/Index">
+                    <img src="https://cdn0.iconfinder.com/data/icons/food-delivery-outline-stay-home/512/Order_history-512.png" width="30" height="30" class="d-inline-block align-top">
+                    History of order
+                </a>
+            }
+
+            @if (User.Identity.IsAuthenticated)
+            {
+                <form class="btn btn-primary" style="width:130px!important; height:40px!important" action="~/Account/Logout" method="post">
+                    <img src="https://www.iconpacks.net/icons/2/free-exit-logout-icon-2857-thumb.png" width="30" height="30" class="d-inline-block align-top">
+                    <input type="submit" class="bg-transparent border-0" style="color:white; width:60px!important; height:30px!important; padding:0px!important; margin:0px! important" value="Logout" />
+                </form>
+
+            }
+
+            <a class="btn btn-primary" href="~/Admin/Index">
+                Admin
+                <img src="https://www.svgimages.com/svg-image/s5/it-admin-icon-256x256.png" width="30" height="30" class="d-inline-block align-top" />
+            </a>
+
+        </nav>
+    </header>
+
+    <main role="main" style="min-height:450px">
+        @RenderBody()
+    </main>
+    <footer class="page-footer font-small mdb-color lighten-3 pt-4 bg-light">
+
+        <div class="container">
+
+            <div class="row">
+
+                <div class="col-lg-2 col-md-12 mb-4">
+
+                    <div class="view overlay z-depth-1-half">
+                        <img src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(73).jpg" class="img-fluid"
+                             alt="">
+                        <a href="">
+                            <div class="mask rgba-white-light"></div>
+                        </a>
+                    </div>
+
+                </div>
+                <div class="col-lg-2 col-md-6 mb-4">
+
+                    <div class="view overlay z-depth-1-half">
+                        <img src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(78).jpg" class="img-fluid"
+                             alt="">
+                        <a href="">
+                            <div class="mask rgba-white-light"></div>
+                        </a>
+                    </div>
+
+                </div>
+                <div class="col-lg-2 col-md-6 mb-4">
+
+                    <div class="view overlay z-depth-1-half">
+                        <img src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(79).jpg" class="img-fluid"
+                             alt="">
+                        <a href="">
+                            <div class="mask rgba-white-light"></div>
+                        </a>
+                    </div>
+
+                </div>
+                <div class="col-lg-2 col-md-12 mb-4">
+
+                    <div class="view overlay z-depth-1-half">
+                        <img src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(81).jpg" class="img-fluid"
+                             alt="">
+                        <a href="">
+                            <div class="mask rgba-white-light"></div>
+                        </a>
+                    </div>
+
+                </div>
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <div class="view overlay z-depth-1-half">
+                        <img src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(82).jpg" class="img-fluid"
+                             alt="">
+                        <a href="">
+                            <div class="mask rgba-white-light"></div>
+                        </a>
+                    </div>
+
+                </div>
+                <div class="col-lg-2 col-md-6 mb-4">
+
+                    <div class="view overlay z-depth-1-half">
+                        <img src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(84).jpg" class="img-fluid"
+                             alt="">
+                        <a href="">
+                            <div class="mask rgba-white-light"></div>
+                        </a>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+        <div class="footer-copyright text-center py-3">
+            © 2021 Copyright:
+            <a href="https://mdbootstrap.com/"> MDBootstrap.com</a>
+        </div>
+
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
